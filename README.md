@@ -7,7 +7,7 @@ English:
 
 Texts copied from PDFs can have unwanted line breaks or words broken up due to hyphenation. This can hinder proper translation with DeepL. DeepL Refine (DeepLR) addresses this issue by removing these unwanted elements and then utilizing the DeepL API for translation.
 
-\!\[DeepLR\]\(images/deeplr.gif\)
+![DeepLR](images/deeplr.gif)
 
 ## Disclaimer (免責事項)
 
