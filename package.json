@@ -1,0 +1,173 @@
+{
+  "name": "deeplr",
+  "displayName": "DeepL Refine",
+  "description": "DeepL Refine: Enhance your translations by automatically correcting line breaks from texts copied from PDFs and optimizing for DeepL.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/nodamushi/deeplr"
+  },
+  "activationEvents": ["onLanguage:*"],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "DeepLR.removeLineBreak",
+        "title": "%cmd-remove-line-break%"
+      },
+      {
+        "command": "DeepLR.translate1",
+        "title": "%cmd-translate1%"
+      },
+      {
+        "command": "DeepLR.translate2",
+        "title": "%cmd-translate2%"
+      },
+      {
+        "command": "DeepLR.translate3",
+        "title": "%cmd-translate3%"
+      },
+      {
+        "command": "DeepLR.translate4",
+        "title": "%cmd-translate4%"
+      },
+      {
+        "command": "DeepLR.translate1C",
+        "title": "%cmd-translate1-c%"
+      },
+      {
+        "command": "DeepLR.translate2C",
+        "title": "%cmd-translate2-c%"
+      },
+      {
+        "command": "DeepLR.translate3C",
+        "title": "%cmd-translate3-c%"
+      },
+      {
+        "command": "DeepLR.translate4C",
+        "title": "%cmd-translate4-c%"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "DeepLR.removeLineBreak",
+          "when": "!editorReadonly && editorHasSelection"
+        },
+        {
+          "command": "DeepLR.translate1",
+          "when": "!editorReadonly && editorHasSelection && config.DeepLR.apiKey && config.DeepLR.language1"
+        },
+        {
+          "command": "DeepLR.translate2",
+          "when": "!editorReadonly && editorHasSelection && config.DeepLR.apiKey && config.DeepLR.language2"
+        },
+        {
+          "command": "DeepLR.translate3",
+          "when": "!editorReadonly && editorHasSelection && config.DeepLR.apiKey"
+        },
+        {
+          "command": "DeepLR.translate4",
+          "when": "!editorReadonly && editorHasSelection && config.DeepLR.apiKey"
+        },
+        {
+          "command": "DeepLR.translate1C",
+          "when": "!editorReadonly && editorHasSelection && config.DeepLR.apiKey && config.DeepLR.language1"
+        },
+        {
+          "command": "DeepLR.translate2C",
+          "when": "!editorReadonly && editorHasSelection && config.DeepLR.apiKey && config.DeepLR.language2"
+        },
+        {
+          "command": "DeepLR.translate3C",
+          "when": "!editorReadonly && editorHasSelection && config.DeepLR.apiKey"
+        },
+        {
+          "command": "DeepLR.translate4C",
+          "when": "!editorReadonly && editorHasSelection && config.DeepLR.apiKey"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "DeepL Refine (DeepLR)",
+      "properties": {
+        "DeepLR.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "%apiKey-desc%"
+        },
+        "DeepLR.preserveOriginalText": {
+          "type": "boolean",
+          "default": true,
+          "description": "%preserve-original-desc%"
+        },
+        "DeepLR.language1": {
+          "type": "string",
+          "default": "ja",
+          "description": "%lang1-desc%"
+        },
+        "DeepLR.language2": {
+          "type": "string",
+          "default": "en-US",
+          "description": "%lang2-desc%"
+        },
+        "DeepLR.treatBlankLinesAsBreaks": {
+          "type": "boolean",
+          "default": true,
+          "description": "%blankline-desc%"
+        },
+        "DeepLR.retainHyphenation": {
+          "type": "boolean",
+          "default": false,
+          "description": "%keephyphen-desc%"
+        },
+        "DeepLR.preserveBreaksAfterDots": {
+          "type": "boolean",
+          "default": true,
+          "description": "%keepdot-desc%"
+        },
+        "DeepLR.listStartingCharacters": {
+          "type": "string",
+          "default": "•-",
+          "description": "%keeplist-desc%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.82.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "deepl-node": "^1.10.2"
+  }
+}

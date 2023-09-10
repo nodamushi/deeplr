@@ -1,0 +1,22 @@
+{
+  "cmd-remove-line-break": "DeepLR: Delete linebreaks",
+
+  "cmd-translate1": "DeepLR: Translate to Language1",
+  "cmd-translate2": "DeepLR: Translate to Language2",
+  "cmd-translate3": "DeepLR: Translate to ...",
+  "cmd-translate4": "DeepLR: Translate to Last Language",
+
+  "cmd-translate1-c": "DeepLR: Translate to Language1 (Condensed)",
+  "cmd-translate2-c": "DeepLR: Translate to Language2 (Condensed)",
+  "cmd-translate3-c": "DeepLR: Translate to ... (Condensed)",
+  "cmd-translate4-c": "DeepLR: Translate to Last Language (Condensed)",
+
+  "apiKey-desc": "(*Required) The key is used to authenticate with the DeepL API.",
+  "preserve-original-desc": "When enabled, the original text will be retained alongside the translation. Otherwise, it will be replaced by the translated text.",
+  "lang1-desc": "Output ISO 639-1 language1 name.(exp: en-US, fr, de, ja)",
+  "lang2-desc": "Output ISO 639-1 language2 name.(exp: en-US, fr, de, ja)",
+  "blankline-desc": "Consider blank lines as a line break.",
+  "keephyphen-desc": "Retain hyphen following an alphabet character.",
+  "keepdot-desc": "Preserve the line break immediately following a line ending with a dot.",
+  "keeplist-desc": "Specify characters used at the beginning of a list. Sentences starting with characters included in the specified string will be recognized as list items, and the preceding line break will be preserved."
+}

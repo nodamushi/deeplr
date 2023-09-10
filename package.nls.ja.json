@@ -1,0 +1,22 @@
+{
+  "cmd-remove-line-break": "DeepLR: 選択範囲の改行を削除",
+
+  "cmd-translate1": "DeepLR: 言語1に翻訳",
+  "cmd-translate2": "DeepLR: 言語2に翻訳",
+  "cmd-translate3": "DeepLR: 言語を選択して翻訳",
+  "cmd-translate4": "DeepLR: 最後の言語に翻訳",
+
+  "cmd-translate1-c": "DeepLR: 言語1に翻訳 (改行削除)",
+  "cmd-translate2-c": "DeepLR: 言語2に翻訳 (改行削除)",
+  "cmd-translate3-c": "DeepLR: 言語を選択して翻訳 (改行削除)",
+  "cmd-translate4-c": "DeepLR: 最後の言語に翻訳 (改行削除)",
+
+  "apiKey-desc": "(※必須) DeepL API の認証キーを設定",
+  "preserve-original-desc": "有効にすると、翻訳後に元の言語のテキストを残します。無効にすると、翻訳後に元の言語のテキストは消えます。",
+  "lang1-desc": "言語1を ISO 639-1 形式の言語名で指定.(en-US, fr, de, jaなど)",
+  "lang2-desc": "言語2を ISO 639-1 形式の言語名で指定.(en-US, fr, de, jaなど)",
+  "blankline-desc": "1つ以上の空行があると、それを改行とみなします",
+  "keephyphen-desc": "アルファベット直後のハイフン (-) で改行されていても、 - を削除せずに残します。",
+  "keepdot-desc": "行が「.」で終わっている場合、改行を残します。",
+  "keeplist-desc": "リストの先頭に使われる文字を指定します。指定された文字列に含まれる文字から始まる文はリストとみなし、直前の改行を維持します。"
+}
