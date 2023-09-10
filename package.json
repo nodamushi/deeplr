@@ -14,6 +14,7 @@
     "type": "git",
     "url" : "https://github.com/nodamushi/deeplr"
   },
+  "publisher": "nodamushi",
   "activationEvents": ["onLanguage:*"],
   "main": "./dist/extension.js",
   "contributes": {
