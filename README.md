@@ -20,18 +20,20 @@ Please note that this plugin is unofficial and not affiliated with or endorsed b
 
 ## Requirements
 
-本非公式プラグインは DeepL API を用います。そのため、DeepL APIの認証キーが必須です。あなたのDeepL API認証キーを設定してください。
+本非公式プラグインは DeepL API を用います。そのため、DeepL APIの認証キーが必須です。あなたの[DeepL API認証キー](https://www.deepl.com/ja/account/summary)を設定してください。
 
 DeepL API については[公式サイト](https://www.deepl.com/pro-api?cta=header-pro-api)を参照してください。
 
 
 English:
 
-This unofficial plugin utilizes the DeepL API. Therefore, a DeepL API authentication key is essential. Make sure to set up your DeepL API authentication key.
+This unofficial plugin utilizes the DeepL API. Therefore, a [DeepL API authentication key](https://www.deepl.com/account/summary) is essential. Make sure to set up your DeepL API authentication key.
 
 For more information on the DeepL API, please visit the [official website](https://www.deepl.com/pro-api?cta=header-pro-api).
 
+![](images/api.png)
 
+![](images/api2.png)
 
 ## Features
 
