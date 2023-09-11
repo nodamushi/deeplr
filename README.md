@@ -94,6 +94,10 @@ English:
 
 ## Release Notes
 
+### 0.0.2
+
+Insert space.
+
 ### 0.0.1
 
 Initial release

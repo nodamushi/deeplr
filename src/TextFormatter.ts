@@ -78,6 +78,7 @@ function joinLines(lines: Line[], option: Option): string {
 
 	let index = 0;
 	let linebreakEnable = false;
+	let insertSpace = false;
 	while (index < lines.length) {
 		const l = lines[index++];
 
@@ -85,6 +86,7 @@ function joinLines(lines: Line[], option: Option): string {
 			if (linebreakEnable && option.blankline) {
 				str += option.linebreak;
 				linebreakEnable = false;
+				insertSpace = false;
 			} else {
 				linebreakEnable = true;
 			}
@@ -101,15 +103,21 @@ function joinLines(lines: Line[], option: Option): string {
 		if (linebreakEnable &&
 			(option.keepListNewline.length !== 0 && option.keepListNewline.indexOf(first) !== -1)) {
 			str += option.linebreak;
+			insertSpace = false;
 		}
 
+		if (insertSpace) {
+			str += " ";
+		}
 
 		const removeHyphen = !option.keepHyphen && len > 2 && last === "-" && /[a-zA-Z]/.test(l.at(len - 2));
 		str += l.substring(0, removeHyphen ? len - 1 : len);
+		insertSpace = !removeHyphen;
 
 		if (index !== lines.length && option.keepDotNewline && last === ".") {
 			str += option.linebreak;
 			linebreakEnable = false;
+			insertSpace = false;
 		} else {
 			linebreakEnable = true;
 		}

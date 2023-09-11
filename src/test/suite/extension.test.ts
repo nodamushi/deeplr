@@ -32,7 +32,7 @@ suite('TextFormatter', () => {
 		const text = "\naa\nbb-\ncc-\ndd.\nAA.\n\nBB\n\nCC\n-a\n-b\n•c\nee";
 		// default
 		assert.strictEqual(
-			"aabbccdd.\nAA.\nBB\nCC\n-a\n-b\n•cee",
+			"aa bbccdd.\nAA.\nBB\nCC\n-a\n-b\n•c ee",
 			tf.removeLineBreak(text, new tf.Option(
 				true,
 				false,
@@ -42,7 +42,7 @@ suite('TextFormatter', () => {
 			)));
 		// disable emptly line => linebreak
 		assert.strictEqual(
-			"aabbccdd.\nAA.\nBBCC\n-a\n-b\n•cee",
+			"aa bbccdd.\nAA.\nBB CC\n-a\n-b\n•c ee",
 			tf.removeLineBreak(text, new tf.Option(
 				false,
 				false,
@@ -52,7 +52,7 @@ suite('TextFormatter', () => {
 			)));
 		// + disable remove hyphen
 		assert.strictEqual(
-			"aabb-cc-dd.\nAA.\nBBCC\n-a\n-b\n•cee",
+			"aa bb- cc- dd.\nAA.\nBB CC\n-a\n-b\n•c ee",
 			tf.removeLineBreak(text, new tf.Option(
 				false,
 				true,
@@ -62,7 +62,7 @@ suite('TextFormatter', () => {
 			)));
 		// + disable dot
 		assert.strictEqual(
-			"aabb-cc-dd.AA.BBCC\n-a\n-b\n•cee",
+			"aa bb- cc- dd. AA. BB CC\n-a\n-b\n•c ee",
 			tf.removeLineBreak(text, new tf.Option(
 				false,
 				true,
@@ -72,7 +72,7 @@ suite('TextFormatter', () => {
 			)));
 		// default + disable dot
 		assert.strictEqual(
-			"aabbccdd.AA.\nBB\nCC\n-a\n-b\n•cee",
+			"aa bbccdd. AA.\nBB\nCC\n-a\n-b\n•c ee",
 			tf.removeLineBreak(text, new tf.Option(
 				true,
 				false,
@@ -82,7 +82,7 @@ suite('TextFormatter', () => {
 			)));
 		// + disable start •
 		assert.strictEqual(
-			"aabb-cc-dd.AA.BBCC\n-a\n-b•cee",
+			"aa bb- cc- dd. AA. BB CC\n-a\n-b •c ee",
 			tf.removeLineBreak(text, new tf.Option(
 				false,
 				true,
@@ -93,7 +93,7 @@ suite('TextFormatter', () => {
 
 		// + disable start hyphen
 		assert.strictEqual(
-			"aabb-cc-dd.AA.BBCC-a-b•cee",
+			"aa bb- cc- dd. AA. BB CC -a -b •c ee",
 			tf.removeLineBreak(text, new tf.Option(
 				false,
 				true,
